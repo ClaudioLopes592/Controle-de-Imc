@@ -6,20 +6,20 @@
             halign: "center"
         MDTextField:
             id: txt_peso
-            hint_text: "Informe seu peso"
+            hint_text: "Informe seu peso (ex.: 69.20)"
             max_text_length: 5
             helper_text: "Este campo é obrigatório"
             helper_text_mode: "on_focus"
-            size_hint: 0.6, None
+            size_hint: 0.68, None
             height: "30dp"
             pos_hint: {'center_x': 0.4}
         MDTextField:
             id: txt_altura
-            hint_text: "Informe sua altura" 
-            max_text_length: 5
+            hint_text: "Informe sua altura (ex.: 1.70)" 
+            max_text_length: 4
             helper_text: "Este campo é obrigatório"
             helper_text_mode: "on_focus"
-            size_hint: 0.6, None
+            size_hint: 0.68, None
             height: "30dp"
             pos_hint: {'center_x': 0.4}
         MDRoundFlatIconButton:
@@ -30,9 +30,5 @@
             on_press: root.calcular_imc()
         MDLabel:
             id: lbl_resultado
-            text: "Resultado"
-            halign: "center"
-        MDLabel:
-            id: lbl_status
-            text: "Status"
+            text: ""
             halign: "center"
