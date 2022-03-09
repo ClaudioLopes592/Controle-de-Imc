@@ -1,0 +1,38 @@
+<TelaPrincipal>:
+    MDBoxLayout:
+        orientation: 'vertical'
+        MDLabel:
+            text: "Controle de IMC"
+            halign: "center"
+        MDTextField:
+            id: txt_peso
+            hint_text: "Informe seu peso"
+            max_text_length: 5
+            helper_text: "Este campo é obrigatório"
+            helper_text_mode: "on_focus"
+            size_hint: 0.6, None
+            height: "30dp"
+            pos_hint: {'center_x': 0.4}
+        MDTextField:
+            id: txt_altura
+            hint_text: "Informe sua altura" 
+            max_text_length: 5
+            helper_text: "Este campo é obrigatório"
+            helper_text_mode: "on_focus"
+            size_hint: 0.6, None
+            height: "30dp"
+            pos_hint: {'center_x': 0.4}
+        MDRoundFlatIconButton:
+            id: btn_calcular
+            text: "[color=#00ffcc]CALCULAR IMC[/color]"
+            font_size: "16sp"
+            pos_hint: {"center_x": .5, "center_y": .5}
+            on_press: root.calcular_imc()
+        MDLabel:
+            id: lbl_resultado
+            text: "Resultado"
+            halign: "center"
+        MDLabel:
+            id: lbl_status
+            text: "Status"
+            halign: "center"
