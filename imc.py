@@ -1,10 +1,9 @@
-from turtle import title
-from kivymd.app import MDApp
-from kivymd.uix.boxlayout import MDBoxLayout
+from kivy.app import App
+from kivy.uix.floatlayout import FloatLayout
 from kivy.core.window import Window
 
 
-class TelaPrincipal(MDBoxLayout):
+class TelaPrincipal(FloatLayout):
 
     def __init__(self, **kwargs):
         super(TelaPrincipal, self).__init__(**kwargs)
@@ -28,24 +27,23 @@ class TelaPrincipal(MDBoxLayout):
     def exibir_status(self, imc):
         if imc < 18.5:
             self.ids['lbl_resultado'].text = (
-                f'Com {imc:.1f} kg/m² sua classificação é MAGREZA OBESIDADE GRAU 0')
+                f'Com {imc:.1f} kg/m²\n sua classificação é\n MAGREZA OBESIDADE GRAU 0')
         elif imc >= 18.5 and imc < 25.0:
             self.ids['lbl_resultado'].text = (
-                f'Com {imc:.1f} kg/m² sua classificação é NORMAL OBESIDADE GRAU 0')
+                f'Com {imc:.1f} kg/m²\n sua classificação é\n NORMAL OBESIDADE GRAU 0')
         elif imc >= 25.0 and imc < 30.0:
             self.ids['lbl_resultado'].text = (
-                f'Com {imc:.1f} kg/m² sua classificação é SOBREPESO OBESIDADE GRAU I')
+                f'Com {imc:.1f} kg/m²\n sua classificação é\n SOBREPESO OBESIDADE GRAU I')
         elif imc >= 30.0 and imc <= 40.0:
             self.ids['lbl_resultado'].text = (
-                f'Com {imc:.1f} kg/m² sua classificação é OBESIDADE GRAU II')
+                f'Com {imc:.1f} kg/m²\n sua classificação é\n OBESIDADE GRAU II')
         elif imc > 40.0:
             self.ids['lbl_resultado'].text = (
-                f'Com {imc:.1f} kg/m² sua classificação é OBESIDADE GRAU III')
+                f'Com {imc:.1f} kg/m²\n sua classificação é\n OBESIDADE GRAU III')
         else:
             self.ids['lbl_resultado'].text = ''
 
-
-class Imc(MDApp):
+class Imc(App):
     def build(self):
         Window.size = (300, 500)
         return TelaPrincipal()
